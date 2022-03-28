@@ -1,7 +1,14 @@
-require 'user.options'
-require 'user.maps'
-require 'user.plugins'
-require 'user.cmp'
-require 'user.lsp'
-require 'user.treesitter'
-require 'user.comment'
+require("user.options")
+require("user.maps")
+require("user.plugins")
+require("user.cmp")
+require("user.lsp")
+require("user.treesitter")
+require("user.comment")
+require("user.gitsigns")
+require("user.bufferline")
+require("user.toggleterm")
+require("user.lualine")
+require("user.nvim-tree")
+require("user.flutter")
+require("user.trouble")

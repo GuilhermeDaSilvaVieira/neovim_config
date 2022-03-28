@@ -1,69 +1,98 @@
-vim.cmd[[ 
-  augroup packer_user_config 
-    autocmd! 
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync 
-  augroup end 
-]]
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]])
 
-local status_ok, packer = pcall(require, 'packer')
+local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-  return
+	return
 end
 
-
 return packer.startup(function(use)
-  -- Plugins para suporte de outros plugins
-  use { 'nvim-lua/popup.nvim' }
-  use { 'nvim-lua/plenary.nvim' }
-  use { 'wbthomason/packer.nvim' }
+	-- Plugins para suporte de outros plugins
+	use({ "nvim-lua/popup.nvim" })
+	use({ "nvim-lua/plenary.nvim" })
+	use({ "wbthomason/packer.nvim" })
 
-  -- Ranger
-  use { 'francoiscabrol/ranger.vim', requires = { 'rbgrouleff/bclose.vim' } }
+	-- FZF
+	use({ "junegunn/fzf" })
 
-  -- FZF
-  use { 'junegunn/fzf' }
+	-- ToggleTerm
+	use({ "akinsho/toggleterm.nvim" })
 
-  -- ToggleTerm
-  use { 'akinsho/toggleterm.nvim' }
+	-- AutoPairs
+	use({ "jiangmiao/auto-pairs" })
 
-  -- AutoPairs
-  use { 'jiangmiao/auto-pairs' }
+	-- Temas
+	use({ "sainnhe/everforest" })
+	use({ "folke/tokyonight.nvim" })
+	use({ "EdenEast/nightfox.nvim" })
 
-  -- Temas
-  use { 'sainnhe/everforest' }
-  use { 'folke/tokyonight.nvim' }
+	-- Markdown preview
+	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
 
-  -- Markdown preview
-  use { 'iamcco/markdown-preview.nvim' }
+	-- Auto completar
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-nvim-lsp",
+			"saadparwaiz1/cmp_luasnip",
+		},
+	})
 
-  -- Auto completar
-  use { 'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
-      'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-nvim-lsp',
-      'saadparwaiz1/cmp_luasnip'
-    },
-  }
+	-- Snippets
+	use({ "L3MON4D3/LuaSnip" })
+	use({ "rafamadriz/friendly-snippets" })
 
-  -- Snippets
-  use { 'L3MON4D3/LuaSnip' }
-  use { 'rafamadriz/friendly-snippets' }
+	-- LSP
+	use({ "neovim/nvim-lspconfig", requires = "williamboman/nvim-lsp-installer" })
 
+	-- Melhores luzes na sintaxe
+	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+	use({ "p00f/nvim-ts-rainbow" })
 
-  -- LSP
-  use { 'neovim/nvim-lspconfig', requires = { 'williamboman/nvim-lsp-installer' } }
+	-- Comentários
+	use({ "JoosepAlviste/nvim-ts-context-commentstring" })
+	use({ "numToStr/Comment.nvim" })
 
-  -- Melhores luzes na sintaxe
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-  use { 'p00f/nvim-ts-rainbow' }
+	-- Git
+	use({ "lewis6991/gitsigns.nvim" })
 
-  -- Comentários
-  use { 'JoosepAlviste/nvim-ts-context-commentstring' }
-  use { 'numToStr/Comment.nvim' }
+	-- BufferLine
+	use({
+		"akinsho/bufferline.nvim",
+		requires = {
+			"moll/vim-bbye",
+			"kyazdani42/nvim-web-devicons",
+		},
+	})
 
-  --Git
-  use { 'lewis6991/gitsigns.nvim' }
+	-- Null-ls
+	use({ "jose-elias-alvarez/null-ls.nvim" })
+
+	-- Lualine
+	use({ "nvim-lualine/lualine.nvim" })
+
+	-- Nvim-tree
+	use({ "kyazdani42/nvim-tree.lua" })
+
+	-- Flutter
+	use({ "akinsho/flutter-tools.nvim", requires = "nvim-lua/plenary.nvim" })
+	use({ "dart-lang/dart-vim-plugin" })
+	use({ "natebosch/dartlang-snippets" })
+
+	-- Snippets
+	use({ "honza/vim-snippets" })
+
+	-- Errors, Avisos, Infos, Dicas
+	use({ "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons" })
+
+	-- Debugger
+	-- use({ "mfussenegger/nvim-dap", requires = "rcarriga/nvim-dap-ui" })
 end)
