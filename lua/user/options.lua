@@ -30,5 +30,5 @@ let["tokyonight_style"] = "storm"
 let["mkdp_browser"] = "librewolf"
 
 vim.cmd([[
-colorscheme tokyonight
+colorscheme nightfox
 ]])
