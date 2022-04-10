@@ -1,4 +1,5 @@
 require("user.options")
+require("colorbuddy").colorscheme("cobalt2")
 require("user.maps")
 require("user.plugins")
 require("user.cmp")

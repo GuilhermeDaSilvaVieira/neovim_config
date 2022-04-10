@@ -119,6 +119,16 @@ _G.packer_plugins = {
     path = "/home/guilherme/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["cobalt2.nvim"] = {
+    loaded = true,
+    path = "/home/guilherme/.local/share/nvim/site/pack/packer/start/cobalt2.nvim",
+    url = "https://github.com/lalitmee/cobalt2.nvim"
+  },
+  ["colorbuddy.nvim"] = {
+    loaded = true,
+    path = "/home/guilherme/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
+    url = "https://github.com/tjdevries/colorbuddy.nvim"
+  },
   ["dart-vim-plugin"] = {
     loaded = true,
     path = "/home/guilherme/.local/share/nvim/site/pack/packer/start/dart-vim-plugin",
@@ -153,6 +163,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/guilherme/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/guilherme/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,

@@ -29,6 +29,8 @@ return packer.startup(function(use)
 	use({ "sainnhe/everforest" })
 	use({ "folke/tokyonight.nvim" })
 	use({ "EdenEast/nightfox.nvim" })
+	use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.nvim" })
+	use({ "ellisonleao/gruvbox.nvim" })
 
 	-- Markdown preview
 	use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install" })
