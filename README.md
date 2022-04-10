@@ -15,4 +15,11 @@ latest version of this packages: `nvim-packer`, `fzf`, `neovim`, `tree-sitter`,
 ```
 cd ~/.config/nvim/
 git clone https://github.com/GuilhermeDaSilvaVieira/neovim_config
+nvim init.lua 
+:so 
+:e ~/.config/nvim/lua/user/plugins.lua
+:so
+:PackerSync
+:q
 ```
+All set. Enjoy
