@@ -13,8 +13,10 @@ latest version of this packages: `nvim-packer`, `fzf`, `neovim`, `tree-sitter`,
 `python-pynvim`
 
 ```
-cd ~/.config/nvim/
+cd ~/.config/
 git clone https://github.com/GuilhermeDaSilvaVieira/neovim_config
+mv neovim_config nvim
+cd nvim
 nvim init.lua 
 :so 
 :e ~/.config/nvim/lua/user/plugins.lua
